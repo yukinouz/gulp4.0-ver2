@@ -1,0 +1,41 @@
+// Global Navi //
+header {
+  align-items: center; // IE対応要素の縦中央揃え
+  background: #2a7eb1;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
+  display: flex;
+  height: 80px;
+
+  /* 固定ヘッダーの場合
+  position: fixed;
+  width: 100%;
+  z-index: 20; // ドロワーより下にする
+  */
+}
+
+header .flexbox {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-global li:not(:last-child) {
+  margin: 0 30px 0 0;
+  &:last-child {
+    margin-right: 0;
+  }
+  a {
+    color: #fff;
+  }
+}
+
+/* jQuery カレントページナビゲーションとの組み合わせ
+
+#gNav a.current{
+  text-decoration: underline;
+}
+
+*/
+
+// Global Navi //
+// ドロワーはdrawer.scss //

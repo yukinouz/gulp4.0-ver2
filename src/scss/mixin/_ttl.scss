@@ -1,0 +1,8 @@
+@import "mixin/_responsive";
+
+$initType: "t01";
+@mixin _ttl($type: $initType) {
+  @if ($type == "t01") {
+  } @else if($type == "t02") {
+  }
+}

@@ -1,0 +1,28 @@
+@import "mixin/_responsive";
+
+// セクションを区切るマージンを定義
+$initType: "m120";
+@mixin _msec($type: $initType) {
+  // 共通のスタイル
+  @if ($type == "m120") {
+    margin: 120px 0 0;
+    @include mq-max(w750) {
+      margin: 21.3% 0 0;
+    }
+  } @else if($type == "m80") {
+    margin: 80px 0 0;
+    @include mq-max(w750) {
+      margin: 16% 0 0;
+    }
+  } @else if($type == "m60") {
+    margin: 60px 0 0;
+    @include mq-max(w750) {
+      margin: 13.3% 0 0;
+    }
+  } @else if($type == "m40") {
+    margin: 40px 0 0;
+    @include mq-max(w750) {
+      margin: 10.7% 0 0;
+    }
+  }
+}

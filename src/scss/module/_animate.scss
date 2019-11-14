@@ -1,0 +1,75 @@
+@charset "utf-8";
+
+// ページトップボタン
+#pagetop {
+  bottom: 5%;
+  display: none;
+  position: fixed;
+  right: 5%;
+}
+
+// ヘッダーに使用
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+.fadeIn {
+  animation: fadeIn 1.2s ease-in;
+}
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+.fadeInLeft {
+  animation: fadeInLeft 1.2s ease-in;
+}
+
+// background-imageで（translateY(-50%)している場合
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(-40%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(-50%);
+  }
+}
+.slideUp {
+  animation: slideUp 1.2s ease-in;
+}
+
+// jQueryとセット
+.fade-in {
+  opacity: 0;
+  transform: translate(0, 10px);
+  transition: all 500ms;
+}
+.fade-in-left {
+  opacity: 0;
+  transform: translate(-10px, 0);
+  transition: all 500ms;
+}
+.fade-in-right {
+  opacity: 0;
+  transform: translate(10px, 0);
+  transition: all 500ms;
+}
+// fadeInaアニメーションをスクロール時に発生させる
+.scroll-in {
+  opacity: 1;
+  transform: translate(0, 0);
+}

@@ -1,0 +1,23 @@
+@import "mixin/_responsive";
+
+// セクションを区切るマージンを定義
+$initType: "p120";
+@mixin _psec($type: $initType) {
+  // 共通のスタイル
+  @if ($type == "p120") {
+    padding: 120px 0 0;
+    @include mq-max(w750) {
+      padding: 60px 0 0;
+    }
+  } @else if($type == "p80") {
+    padding: 80px 0 0;
+    @include mq-max(w750) {
+      padding: 40px 0 0;
+    }
+  } @else if($type == "p60") {
+    padding: 60px 0 0;
+    @include mq-max(w750) {
+      padding: 30px 0 0;
+    }
+  }
+}

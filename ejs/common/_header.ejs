@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <!--Required meta tags-->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title><%= title %></title>
+  <meta name="description" content="<%= description %>">
+  <meta property="og:title" content="ページのタイトル" />
+  <meta property="og:type" content="website　か　blog　か　article" />
+  <meta property="og:description" content="ページの簡単な説明" />
+  <meta property="og:url" content="ページのURL" />
+  <meta property="og:site_name" content="サイトのタイトル" />
+  <meta property="og:image" content="サムネイル画像のURL" />
+  <!--favicon-->
+  <link rel="icon" href="<%= r_path %>/favicon.ico">
+  <!-- スマホ用アイコン -->
+  <link rel="apple-touch-icon" sizes="180x180" href="<%= r_path %>/apple-touch-icon.png">
+  <!-- fontawesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <!-- css -->
+  <link rel="stylesheet" href="<%= r_path %>/src/css/swiper/swiper.css">
+  <link rel="stylesheet" href="<%= r_path %>/src/css/style.css">
+</head>
+<body>
+
+<!--グローバルナビゲーション-->
+<header id="header" class="header">
+<div class="w1200">
+<div class="flex-between">
+  <h1 class="logo-img">
+    <a href="#"><img src="img/logo_header.jpg" alt="SAMPLE"></a>
+  </h1>
+  <nav role="navigation" id="gNav" class="nav-global">
+    <ul class="flexbox">
+      <li><a href="">TOP</a></li>
+      <li><a href="">MENU1</a></li>
+      <li><a href="">MENU2</a></li>
+      <li><a href="">MENU3</a></li>
+      <li><a href="">MENU4</a></li>
+    </ul>
+    </nav>
+  </div><!-- /.flexbox-->
+</div><!-- /.w1200-->
+<!--/.グローバルナビゲーション-->
+
+<!--ドロワー-->
+<input id="drawer-checkbox" type="checkbox">
+<label id="drawer-icon" for="drawer-checkbox"><span></span></label>
+<label id="drawer-close" for="drawer-checkbox"></label>
+<div id="drawer-content">
+  <nav class="drawer-nav">
+    <ul class="menu">
+      <li><a href="#">TOP</a></li>
+      <li><a href="">MENU1</a></li>
+      <li><a href="">MENU2</a></li>
+      <li><a href="">MENU3</a></li>
+      <li><a href="">MENU4</a></li>
+    </ul>
+  </nav>
+</div><!-- /.drawer-content -->
+<!--/.ドロワー-->
+
+</header><!-- /#header.header -->

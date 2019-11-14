@@ -1,0 +1,65 @@
+// @mixin flex {
+//   display: -webkit-box;
+//   display: -webkit-flex;
+//   display: -ms-flexbox;
+//   display: flex;
+// }
+
+// @mixin flex-between {
+//   display: -webkit-box;
+//   display: -webkit-flex;
+//   display: -ms-flexbox;
+//   display: flex;
+//   -webkit-box-pack: justify;
+//   -ms-flex-pack: justify;
+//   justify-content: space-between;
+// }
+
+// @mixin flex-wrap{
+//   display: -webkit-box;
+//   display: -webkit-flex;
+//   display: -ms-flexbox;
+//   display: flex;
+//   -webkit-box-pack: justify;
+//   -ms-flex-pack: justify;
+//   justify-content: space-between;
+//   -ms-flex-wrap: wrap;
+//   flex-wrap: wrap;
+// }
+
+// @mixin flex-center {
+//   display: -webkit-box;
+//   display: -webkit-flex;
+//   display: -ms-flexbox;
+//   display: flex;
+//   -webkit-box-pack: center;
+//   -ms-flex-pack: center;
+//   justify-content: center;
+// }
+
+// @mixin flex-around {
+//   display: -webkit-box;
+//   display: -webkit-flex;
+//   display: -ms-flexbox;
+//   display: flex;
+//   -ms-flex-pack: distribute;
+//   justify-content: space-around;
+// }
+
+$initType: "flex";
+@mixin _flex($type: $initType) {
+  //共通スタイル
+  display: flex;
+
+  @if ($type == "flex") {
+    //スタイル
+  } @else if($type == "between") {
+    justify-content: space-between;
+  } @else if($type == "around") {
+    justify-content: space-around;
+  } @else if($type == "center") {
+    justify-content: center;
+  } @else if ($type == "wrap") {
+    flex-wrap: wrap;
+  }
+}

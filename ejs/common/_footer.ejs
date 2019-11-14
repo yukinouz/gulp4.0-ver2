@@ -1,0 +1,22 @@
+<footer id="footer" class="footer">
+  <p class="copyright">Copyright © 2007-2012 Company Name co., Ltd. All Rights Reserved.</p>
+</footer><!-- /#footer.footer -->
+
+<div id="pagetop"><img src="/src/img/common/pagetop.svg" alt="ページトップ"></div>
+
+<!--Swiper.jsの読み込み-->
+<script src="src/js/swiper.js"></script>
+<script>
+  var swiper = new Swiper('.swiper-container', {
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    }
+  });
+</script>
+
+<script src="<%= r_path %>/src/js/drawer.js"></script>
+<script src="<%= r_path %>/src/js/accordion.js"></script>
+<script src="<%= r_path %>/src/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+@import "mixin/_responsive";
+
+html {
+  font-size: 62.5%;
+}
+
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+ul,
+ol,
+dl,
+li,
+dt,
+dd,
+p,
+div,
+span,
+img,
+a,
+table,
+tr,
+th,
+td,
+figure {
+  border: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+}
+
+article,
+header,
+footer,
+aside,
+figure,
+figcaption,
+nav,
+section {
+  display: block;
+}
+body {
+  color: #333;
+  font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic",
+    "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", sans-serif;
+  font-size: 1.6em; // デフォルトの文字サイズを16pxに
+  line-height: 1.6875;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%; // iPhoneのフォントサイズ自動調整をオフにする
+  width: 100%;
+  @include mq-max(w750) {
+    font-size: 4.27vw;
+  }
+}
+
+/* IE用のfont-family メイリオを優先する */
+@media all and (-ms-high-contrast: none) {
+  body {
+    font-family: "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  }
+}
+
+.wrap {
+  overflow: hidden;
+}
+
+ol,
+ul {
+  list-style: none;
+  list-style-type: none;
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+}
+
+a:hover {
+  cursor: pointer;
+  opacity: 0.7;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: top;
+}
+
+table {
+  border-collapse: collapse; // 隙間を無くして一重戦に
+}
+
+input,
+button,
+textarea,
+select {
+  -webkit-appearance: none;
+  appearance: none; // iPhone固有のスタイルを削除
+  border-radius: 0; //iPhoneで勝手に角が取れるのを削除
+}
+
+input[type="submit"],
+button {
+  cursor: pointer;
+}

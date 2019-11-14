@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>トップページのタイトルタグ</title>
+  <meta name="description" content="トップページのディスクリプション">
+  <!-- fontawesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <!-- css -->
+  <link rel="stylesheet" href="src/css/swiper/swiper.css">
+  <link rel="stylesheet" href="src/css//style.css">
+</head>
+<body>
+
+<header id="header" class="header">
+<!--ドロワー-->
+<div class="drawer-wrapper">
+  <input id="drawer-checkbox" type="checkbox">
+  <label id="drawer-icon" for="drawer-checkbox"><span></span></label>
+  <label id="drawer-close" for="drawer-checkbox"></label>
+  <div id="drawer-content">
+    <nav class="drawer-nav">
+      <ul class="drawer-ul">
+        <li><a href="#">TOP</a></li>
+        <li><a href="">3つの特徴</a></li>
+        <li><a href="">物件情報</a></li>
+        <li><a href="">購入からご入居まで</a></li>
+        <li><a href="">お客様の声</a></li>
+        <li><a href="">会社概要</a></li>
+      </ul>
+    </nav>
+  </div><!-- /.drawer-content -->
+</div><!-- /.drawer-wrapper -->
+<!--/.ドロワー-->
+</header><!-- /#header.header -->
+
+
+<!--Swiper.jsの読み込み-->
+<script src="src/js/swiper.js"></script>
+<script>
+  var swiper = new Swiper('.swiper-container', {
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    }
+  });
+</script>
+
+<script src="src/js/script.js"></script>
+</body>
+
+</html>

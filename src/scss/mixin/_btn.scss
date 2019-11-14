@@ -1,0 +1,29 @@
+$initType: "normal";
+@mixin _btn($type: $initType) {
+  // 共通スタイル
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  @if ($type == "normal") {
+    //スタイル
+  } @else if($type == "cv") {
+    background: $green;
+    color: #fff;
+    height: 62px;
+    width: 221px;
+  }
+}
+
+/***************************************
+下記の様に記載する
+.header{
+  &-btn{
+    @include _btn;
+  }
+}
+.sec{
+  &-btn{
+    @include _btn('large');
+  }
+}
+***************************************/

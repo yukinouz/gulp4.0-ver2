@@ -1,0 +1,118 @@
+@import "mixin/_responsive";
+
+$black: #090803;
+$bg: #fffdf6;
+$green: #295525;
+$yellow: #fff200;
+
+// PC, SPでの表示非表示切り替え
+._pc {
+  @include mq-max(w750) {
+    display: none;
+  }
+}
+
+._sp {
+  @include mq-min(w750) {
+    display: none;
+  }
+}
+
+// 改行
+.br-min320 {
+  display: none;
+  @include mq-min(w320) {
+    display: block;
+  }
+}
+.br-min375 {
+  display: none;
+  @include mq-min(w375) {
+    display: block;
+  }
+}
+.br-min576 {
+  display: none;
+  @include mq-min(w576) {
+    display: block;
+  }
+}
+.br-min650 {
+  display: none;
+  @include mq-min(w650) {
+    display: block;
+  }
+}
+.br-min750 {
+  display: none;
+  @include mq-min(w750) {
+    display: block;
+  }
+}
+.br-min940 {
+  display: none;
+  @include mq-min(w940) {
+    display: block;
+  }
+}
+.br-min1024 {
+  display: none;
+  @include mq-min(w1024) {
+    display: block;
+  }
+}
+.br-min1280 {
+  display: none;
+  @include mq-min(w1280) {
+    display: block;
+  }
+}
+.br-max320 {
+  display: none;
+  @include mq-max(w320) {
+    display: block;
+  }
+}
+.br-max375 {
+  display: none;
+  @include mq-max(w375) {
+    display: block;
+  }
+}
+.br-max576 {
+  display: none;
+  @include mq-max(w576) {
+    display: block;
+  }
+}
+.br-max650 {
+  display: none;
+  @include mq-max(w650) {
+    display: block;
+  }
+}
+.br-max750 {
+  display: none;
+  @include mq-max(w750) {
+    display: block;
+  }
+}
+.br-max940 {
+  display: none;
+  @include mq-max(w940) {
+    display: block;
+  }
+}
+.br-max1024 {
+  display: none;
+  @include mq-max(w1024) {
+    display: block;
+  }
+}
+
+/* ページ内リンクの位置調整 */
+.anchor {
+  display: block;
+  margin-top: -70px;
+  padding-top: 70px;
+}

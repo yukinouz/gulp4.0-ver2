@@ -1,0 +1,40 @@
+// min-width
+$breakpoint-min: (
+  "w320": "screen and (min-width: 320px)",
+  "w375": "screen and (min-width: 375px)",
+  "w576": "screen and (min-width: 576px)",
+  "w650": "screen and (min-width: 650px)",
+  "w750": "screen and (min-width: 750px)",
+  "w768": "screen and (min-width: 768px)",
+  "w940": "screen and (min-width: 940px)",
+  "w1024": "screen and (min-width: 1024px)",
+  "w1280": "screen and (min-width: 1280px)",
+  "w1440": "screen and (min-width: 1440px)"
+) !default;
+
+// max-width
+$breakpoint-max: (
+  "w320": "screen and (max-width: 320px)",
+  "w375": "screen and (max-width: 375px)",
+  "w576": "screen and (max-width: 576px)",
+  "w650": "screen and (max-width: 650px)",
+  "w750": "screen and (max-width: 750px)",
+  "w768": "screen and (max-width: 768px)",
+  "w940": "screen and (max-width: 940px)",
+  "w1024": "screen and (max-width: 1024px)",
+  "w1280": "screen and (max-width: 1280px)",
+  "w1440": "screen and (max-width: 1430px)"
+) !default;
+
+// @mixinの定義
+@mixin mq-min($breakpoint: w768) {
+  @media #{map-get($breakpoint-min, $breakpoint)} {
+    @content;
+  }
+}
+
+@mixin mq-max($breakpoint: w768) {
+  @media #{map-get($breakpoint-max, $breakpoint)} {
+    @content;
+  }
+}

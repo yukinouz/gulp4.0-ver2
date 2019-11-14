@@ -1,0 +1,88 @@
+@import "_color";
+
+.accordion {
+  @include _msec(m60);
+  &-item {
+    box-shadow: 0 3px 6px #00000029;
+    margin-top: 15px;
+    @include mq-max(w750) {
+      margin-top: 4%;
+    }
+  }
+  &-title {
+    @include _flex;
+
+    align-items: center;
+    cursor: pointer;
+    height: 40px;
+    padding-left: 65px;
+    position: relative;
+    @include mq-max(w750) {
+      height: 10.7vw;
+      padding-left: 17.3vw;
+    }
+    &::before {
+      @include _flex(center);
+
+      align-items: center;
+      background: $blue;
+      color: #fff;
+      content: "Q";
+      height: 40px;
+      left: 0;
+      position: absolute;
+      width: 40px;
+      @include mq-max(w750) {
+        height: 10.7vw;
+        width: 10.7vw;
+      }
+    }
+    &::after {
+      border-right: solid 2px $blue;
+      border-top: solid 2px $blue;
+      content: "";
+      display: block;
+      height: 8px;
+      position: absolute;
+      right: 30px;
+      top: 35%;
+      transform: rotate(135deg);
+      transition: all 0.2s ease-in-out;
+      width: 8px;
+      @include mq-max(w750) {
+        border-right-width: 0.53vw;
+        border-top-width: 0.53vw;
+        right: 5.33%;
+      }
+    }
+    &.open::after {
+      top: 45%;
+      transform: rotate(-45deg);
+    }
+  }
+  &-content {
+    display: none;
+    padding: 6.5px 0 6.5px 65px;
+    position: relative;
+    @include mq-max(w750) {
+      height: 10.7vw;
+      padding: 1.73vw 0 1.73vw 17.3vw;
+    }
+    &::before {
+      @include _flex(center);
+
+      align-items: center;
+      color: $blue;
+      content: "A";
+      height: 40px;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 40px;
+      @include mq-max(w750) {
+        height: 10.7vw;
+        width: 10.7vw;
+      }
+    }
+  }
+}
