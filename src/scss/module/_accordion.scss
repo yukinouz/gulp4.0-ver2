@@ -1,5 +1,3 @@
-@import "_color";
-
 .accordion {
   @include _msec(m60);
   &-item {
@@ -25,7 +23,7 @@
       @include _flex(center);
 
       align-items: center;
-      background: $blue;
+      background: blue;
       color: #fff;
       content: "Q";
       height: 40px;
@@ -38,8 +36,8 @@
       }
     }
     &::after {
-      border-right: solid 2px $blue;
-      border-top: solid 2px $blue;
+      border-right: solid 2px blue;
+      border-top: solid 2px blue;
       content: "";
       display: block;
       height: 8px;
@@ -72,7 +70,7 @@
       @include _flex(center);
 
       align-items: center;
-      color: $blue;
+      color: blue;
       content: "A";
       height: 40px;
       left: 0;
