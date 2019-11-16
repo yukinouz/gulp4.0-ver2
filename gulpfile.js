@@ -1,9 +1,7 @@
 /* ==================================
 npm install
-npm audit // セキュリティの脆弱性をチェック
-npm audit fix
-ncu // package.jsonの最新バージョンを確認
-ncu - u
+ncu // package.jsonのバージョンをチェック
+ncu -u // package.jsonを最新バージョンにアップデート
 ==================================*/
 
 // プラグインの読み込み
@@ -60,23 +58,23 @@ gulp.task('sass', function () {
 gulp.task('browser-sync', function (done) {
   browserSync.init({
     // ローカルサーバー開発
-    port: 8080, // デフォルトは3000
-    files: ['./**/*.php'],
-    proxy: 'http://testsite.wp/', //MAMP -> http:localhost8888/
-    open: true,
-    watchOptions: {
-            debounceDelay: 1000  //1秒間、タスクの再実行を抑制
-        }
+    // port: 8080, // デフォルトは3000
+    // files: ['./**/*.php'],
+    // proxy: 'http://testsite.wp/', //MAMP -> http:localhost8888/
+    // open: true,
+    //watchOptions: {
+  //        debounceDelay: 1000  //1秒間、タスクの再実行を抑制
+   //     }
     /*
     その他のオプションは下記を参照
     https://www.browsersync.io/docs/options
     */
 
     //ローカル開発
-    // server: {
-    //   baseDir: "./",
-    //   index: "index.html"
-    // }
+     server: {
+       baseDir: "./",
+       index: "index.html"
+     }
   });
   done();
 });
