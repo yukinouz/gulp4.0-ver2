@@ -1,20 +1,9 @@
 /* ==================================
-npm install -D gulp
-npm install gulp-sass --save-dev
-npm install gulp-plumber --save-dev
-npm install gulp-notify --save-dev
-npm install gulp-sass-glob --save-dev
-npm install browser-sync --save-dev
-npm install gulp-postcss --save-dev
-npm install autoprefixer --save-dev
-npm install css-declaration-sorter --save-dev
-npm install gulp-imagemin --save-dev
-npm install imagemin-pngquant --save-dev
-npm install imagemin-mozjpeg --save-dev
-npm install gulp-ejs --save-dev
-npm install gulp-rename --save-dev
-
-npm install gulp-sass gulp-plumber gulp-notify gulp-sass-glob browser-sync gulp-postcss autoprefixer css-declaration-sorter gulp-imagemin imagemin-pngquant imagemin-mozjpeg gulp-ejs gulp-rename --save-dev
+npm install
+npm audit // セキュリティの脆弱性をチェック
+npm audit fix
+ncu // package.jsonの最新バージョンを確認
+ncu - u
 ==================================*/
 
 // プラグインの読み込み
@@ -31,8 +20,6 @@ var cssdeclsort = require('css-declaration-sorter'); //css並べ替え
 var imagemin = require('gulp-imagemin');
 var pngquant = require('imagemin-pngquant');
 var mozjpeg = require('imagemin-mozjpeg');
-// var mmq = require('gulp-merge-media-queries'); //メディアクエリを纏める
-// var gulpStylelint = require('gulp-stylelint'); //自動整形
 var ejs = require("gulp-ejs");
 var rename = require("gulp-rename"); //.ejsの拡張子を変更
 
@@ -59,17 +46,12 @@ gulp.task('sass', function () {
       {
         // ☆IEは11以上、Androidは4.4以上
         // その他は最新2バージョンで必要なベンダープレフィックスを付与する
-        browsers: ["last 2 versions", "ie >= 11", "Android >= 4"],
+        "browserslist": [
+          "last 2 versions", "ie >= 11", "Android >= 4"],
         cascade: false
       }
     )]))
     .pipe(postcss([cssdeclsort({ order: 'alphabetically' })]))//プロパティをソートし直す(アルファベット順)
-    // .pipe( mmq() )//メディアクエリをまとめる
-    // .pipe(
-    //   gulpStylelint({
-    //     fix: true//stylelingを使う。fix: trueで整形してくれる
-    //   })
-    // )
     .pipe(sourcemaps.write('./sourcemaps')) //ソースマップを作成
     .pipe(gulp.dest('./src/css'));//コンパイル後の出力先
 });
@@ -118,7 +100,7 @@ gulp.task('default', gulp.series(gulp.parallel('browser-sync', 'watch')));
 
 //圧縮率の定義
 var imageminOption = [
-  pngquant({ quality: [70-85], }),
+  pngquant({ quality: [80-85], }),
   mozjpeg({ quality: 85 }),
   imagemin.gifsicle({
     interlaced: false,
@@ -131,7 +113,6 @@ var imageminOption = [
 ];
 // 画像の圧縮
 // $ gulp imageminで画像を圧縮
-// .gifが入っているとエラーが出る
 gulp.task('imagemin', function () {
   return gulp
     .src('./src/img/**/*.{png,jpg,gif,svg}')
