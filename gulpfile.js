@@ -24,7 +24,6 @@ var rename = require("gulp-rename"); //.ejsの拡張子を変更
 gulp.task("ejs", (done) => {
   gulp
     .src(["ejs/**/*.ejs", "!" + "ejs/**/_*.ejs"])
-    .pipe(ejs({}, {}, { ext: '.html' })) //ejsを纏める
     .pipe(rename({ extname: ".html" })) //拡張子をhtmlに
     .pipe(gulp.dest("./")); //出力先
   done();
@@ -42,10 +41,10 @@ gulp.task('sass', function () {
     }))
     .pipe(postcss([autoprefixer(
       {
-        // ☆IEは11以上、Androidは4.4以上
-        // その他は最新2バージョンで必要なベンダープレフィックスを付与する
+        // ☆IEは11以上、Androidは5以上
+        // その他は最新1バージョンで必要なベンダープレフィックスを付与する
         "browserslist": [
-          "last 2 versions", "ie >= 11", "Android >= 4"],
+          "last 1 version", "ie >= 11", "Android >= 5"],
         cascade: false
       }
     )]))
